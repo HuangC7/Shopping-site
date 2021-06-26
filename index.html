@@ -1,0 +1,1357 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/iconfont.css" rel="stylesheet" type="text/css" />
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.jqzoom.js"></script>
+    <script src="./js/admin.js"></script>
+    <script src="./js/swiper.js"></script>
+    <title>商城首页201858304315黄悦轩201858304317蒲文杰</title>
+    <style>
+        h2 {
+            text-align: center;
+            font-size: 48px;
+        }
+
+        #box {
+            width: 80%;
+            margin: 0 auto;
+            min-height: 600px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #box>div {
+            height: 600px;
+            width: 48%;
+        }
+
+        .left {
+            text-align: center;
+        }
+
+        .left h3 {
+            font-size: 23px;
+            margin-bottom: 35px;
+        }
+
+        .left p {
+            font-size: 13.5px;
+            color: #908c8c;
+            letter-spacing: 0px;
+            line-height: 24px;
+            margin-bottom: 48px;
+        }
+
+        .myForm {
+            width: 615px;
+            margin: 0 auto;
+            height: 580px;
+            box-sizing: border-box;
+            text-align: center;
+            background: #fff;
+            padding: 0 10px 0 10px;
+            box-shadow: 0px 0px 50px 1px #cccccc;
+            margin-left: 48px;
+            padding-left: 35px;
+
+        }
+
+        .myForm h1 {
+            padding-top: 25px;
+            margin-bottom: 45px;
+        }
+
+        .item {
+            position: relative;
+            height: 55px;
+        }
+
+        .label {
+            width: 15%;
+            float: left;
+            padding: 6px 12px;
+        }
+
+        .input {
+            width: 45%;
+            float: left;
+        }
+
+        .input input {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+
+
+        .msg {
+            position: absolute;
+            top: 0%;
+            left: 71%;
+            color: red;
+        }
+
+        #btn {
+            width: 325px;
+            height: 50px;
+            background: #67e878;
+            outline: none;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.5s all;
+            box-shadow: 0px 0px 8px 0px #60f574;
+        }
+
+        #btn_Login {
+
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            user-select: none;
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            margin-top: 25px;
+        }
+
+        .area {
+            text-align: left;
+        }
+
+        select {
+            max-width: 80px;
+        }
+
+        #diaLog {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            z-index: 999999;
+            opacity: 0.8;
+            text-align: center;
+            display: none
+        }
+
+        #diaLog .content {
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: pink;
+            opacity: 1;
+        }
+
+        .item {
+            margin-top: 25px;
+            margin-left: 5%;
+        }
+        .products_img{
+            transition: opacity .3s ease-out;
+        }
+        .products_img:hover{
+           opacity: 0.7;
+        }
+        #googlead{
+            width: 100%;
+            height: 66.5px;
+            background-color: orangered;
+        }
+        #googlead > img{
+            width: 100%;
+            height: 66.5px;
+            overflow: hidden;
+        }
+        #myid{
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+            background: #2d2d2d;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            opacity: .3;
+            margin-top: -60px;
+            margin-left: 1320px;
+            z-index: 100;
+            float: left;
+        }
+        #words{
+            margin-top: -60px;
+            margin-left: 1320px;
+            float: left;
+            color: black;
+            cursor: pointer;
+        }
+        .search{
+            width: 100%;
+            height: 90px;
+        }
+        .form{
+            margin-left: 400px;
+            margin-top: 40px;
+            border: orangered solid 2px;
+            width: 616px;
+            height: 42px;
+        }
+        .form_text{
+            width: 276px;
+            height: 32px;
+            border: none;
+        }
+        .form_text::placeholder{
+            font-size: 14px;
+            line-height: 36px;
+            height: 36px;
+            padding-left: 8px;
+        }
+        .form_button{
+            margin-left: 197px;
+            width: 139px;
+            height: 41px;
+            background-color: orangered;
+            border:none;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: #fff;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .logo_top{
+            float: left;
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+        .logo_top > img{
+            height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ---------------登录遮罩层----------- -->
+    <div id="diaLog">
+        <div class="content">
+            <h1>登录 <span id="diaLogClose" style="cursor: pointer;">关闭</span></h1>
+            <div class="item">
+                <label class="label" for="">账号：</label>
+                <div class="input"><input type="text" id="userName" required placeholder="请输入用户名。。。。"></div>
+                <span class="msg"></span>
+            </div>
+
+            <div class="item">
+                <label class="label" for="">密码：</label>
+                <div class="input"><input type="password" id="pwd" required placeholder="请输入密码。。。。"></div>
+                <span class="msg"></span>
+            </div>
+
+            <button id="btn_Login">点击登录</button>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#diaLogClose").click(function () {
+                $("#diaLog").css({
+                    'display': 'none'
+                })
+            })
+            // 初始化信息
+            let userDatas = sessionStorage.getItem("login")
+            console.log(userDatas);
+
+            if (userDatas == null || userDatas != "") {
+                sessionStorage.setItem('login', JSON.stringify(userData))
+            } else {
+                let Js = JSON.parse(userDatas);
+                $.each(userData, function (index, value) {
+                    Js.push(value)
+                })
+                sessionStorage.setItem('login', JSON.stringify(Js))
+            }
+
+            // 结果
+            let result = 0;
+            // 用户名
+            let userName = $("#userName")
+            let pwd = $("#pwd") // 密码
+
+            // 判断密码
+            pwd.blur(function () {
+                if (pwd.val() == "") {
+                    pwd.parent().next().text('密码不能为空')
+                } else if (pwd.val().length < 1 || pwd.val().length > 16) {
+                    pwd.parent().next().text('密码的长度在1 到 16 位')
+                } else {
+                    pwd.parent().next().text('')
+                    result += 1;
+                }
+            })
+
+            // 判断用户名
+            userName.blur(function () {
+                if (userName.val() == "") {
+                    userName.parent().next().text('用户名不能为空')
+                } else if (userName.val().length < 1 || userName.val().length > 16) {
+                    userName.parent().next().text('用户名的长度在1 到 16 位')
+                } else {
+                    userName.parent().next().text('')
+                    result += 1;
+                }
+            })
+
+            // 登录
+            $("#btn_Login").click(function () {
+                console.log(1);
+
+                let flag = false
+                // 判断密码
+                if (pwd.val() == "") {
+                    pwd.parent().next().text('密码不能为空')
+                    flag = false
+                } else if (pwd.val().length < 1 || pwd.val().length > 16) {
+                    pwd.parent().next().text('密码的长度在8 到 16 位')
+                    flag = false;
+                } else {
+                    pwd.parent().next().text('')
+                    flag = true;
+                }
+
+                // 判断用户名
+                if (userName.val() == "") {
+                    userName.parent().next().text('用户名不能为空')
+                    flag = false
+                } else if (userName.val().length < 1 || userName.val().length > 16) {
+                    userName.parent().next().text('用户名的长度在1 到 16 位')
+                    flag = false
+                } else {
+                    userName.parent().next().text('')
+                    flag = true;
+                }
+
+                if (flag) {
+                    let user = userInfo(userName.val())
+                    console.log(user);
+
+                    if (user == null) {
+                        alert('改用户名不存在')
+                        return
+                    }
+                    if (user.pwd != pwd.val()) {
+                        alert('密码错误')
+                        return
+                    }
+                    window.sessionStorage.setItem('user', userName.val())
+                    $("#diaLog").css({
+                        'display': 'none'
+                    })
+                    let us = window.sessionStorage.getItem('user')
+
+
+                    if (us != null) {
+                        console.log(us);
+                        $("#Login").text(us)
+                    }
+
+
+                }
+
+
+
+            })
+
+
+            // 获取用户名
+            function userInfo(name) {
+                // 如果判断正确，进行登录
+                var res = null;
+                let userAdmin = JSON.parse(userDatas)
+                console.log(userAdmin);
+
+                $.each(userAdmin, function (index, value) {
+                    if (value.userName == name) {
+                        res = value
+                    }
+                })
+                return res
+            }
+        })
+    </script>
+    <!--顶部图层-->
+    <!--顶部广告位-->
+    <div id="googlead" style="visibility:visible"><img src="images/ADtop.jpg" alt=""/></div>
+    <div id="myid" class="iconfont icon-cuowu" onclick="return display()"></div>
+    <span id="words" onclick="return display()"></span>
+    <script >
+        googlead = document.getElementById('googlead');
+        myid = document.getElementById('myid');
+        function display(){
+            if(googlead.style.visibility == 'visible'){
+                googlead.style.visibility ='hidden' ;
+                myid.style.display = 'none';
+                document.getElementById('words').style.display = 'block';
+                document.getElementById('words').innerHTML='显示广告';
+                return true;
+            }
+            else{
+                googlead.style.visibility='visible';
+                myid.style.display = 'block';
+                document.getElementById('words').style.display = 'none';
+                return false;
+            }
+        }
+    </script>
+    <!--end---------->
+    <div id="header_top">
+        <div id="top">
+            <div class="Inside_pages">
+                <div class="Collection">下午好，欢迎光临锦宏颜！<em></em><a href="#">收藏我们</a></div>
+                <div class="hd_top_manu clearfix">
+                    <ul class="clearfix">
+                        <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<span id="btn_click">
+                                <a href="javascript:;" class="red" id="Login">[请登录]</a> 新用户<a href="./Register.html"
+                                    class="red">[免费注册]</a>
+                            </span></li>
+
+                        <script>
+                            // 判断是否登录
+                            let user = window.sessionStorage.getItem("user")
+                            console.log(user);
+                            if (user != null) {
+                                document.getElementById("Login").innerText = user
+                            }
+
+
+                            document.getElementById("Login").onclick = function () {
+                                // 登录
+                                document.getElementById("diaLog").style.display = "block"
+                            }
+                        </script>
+
+
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"> <a href="./gouwuche.html">购物车</a> </li>
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">联系我们</a></li>
+                        <li class="hd_menu_tit list_name" data-addclass="hd_menu_hover"><a href="#"
+                                class="hd_menu">客户服务</a>
+                            <div class="hd_menu_list">
+                                <ul>
+                                    <li><a href="#">常见问题</a></li>
+                                    <li><a href="#">在线退换货</a></li>
+                                    <li><a href="#">在线投诉</a></li>
+                                    <li><a href="#">配送范围</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="hd_menu_tit phone_c" data-addclass="hd_menu_hover"><a href="#" class="hd_menu "><em
+                                    class="iconfont icon-shouji"></em>手机版</a>
+                            <div class="hd_menu_list erweima">
+                                <ul>
+                                    <img src="images/erweima.png" width="100px" height="100" />
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--样式-->
+        <!--搜索栏----->
+        <div class="logo_top"><img src="images/logo.png" alt=""/></div>
+        <div class="search">
+            <div class="form">
+                <input type="text" name="uname" placeholder="请输入关键词" class="form_text">
+                <button class="form_button">搜索
+                    <span class="t"></span>
+                </button>
+            </div>
+        </div>
+        <!--end------->
+        <!--菜单导航样式-->
+        <div id="Menu" class="clearfix">
+            <div class="index_style clearfix">
+                <div id="allSortOuterbox">
+                    <div class="t_menu_img"></div>
+                    <div class="Category"><a href="#"><em></em>所有产品分类</a></div>
+                    <div class="hd_allsort_out_box_new">
+                        <!--左侧栏目开始-->
+                        <ul class="Menu_list">
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">化妆用品</a> <span>&lt;</span></div>
+                                <div class="link_name">
+                                    <p><a href="#">口红</a> <a href="#">彩妆</a> <a href="#">定妆粉</a> <a
+                                            href="#">美颜笔</a></p>
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">身体护理</a><span>&lt;</span></div>
+                                <div class="link_name">
+                                    <a href="#"> 面霜</a><a href="#">眼霜</a><a href="#"> 面膜</a><a
+                                        href="#">护肤套装</a>
+
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">香水彩妆</a><span>&lt;</span></div>
+                                <div class="link_name">
+                                    <a href="#">卸妆 </a><a href="#">防晒</a><a href="#">BB</a>
+                                    <a href="#">女士香水</a>
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">洗发护发</a><span>&lt;</span></div>
+                                <div class="link_name">
+                                    <a href="#">洗发</a><a href="#">护发</a><a href="#">沐浴</a><a href="#">润肤乳</a>
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">女性护理</a><span>&lt;</span></div>
+                                <div class="link_name">
+                                    <a href="#">洁面</a><a href="#">坚果炒货</a><a href="#">乳液</a>
+                                    <a href="#"> 面霜</a>
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">男性护理</a><span>&lt;</span></div>
+                                <div class="link_name">
+                                    <a href="#">洁面</a><a href="#">坚果炒货</a><a href="#">乳液</a>
+                                    <a href="#"> 面霜</a>
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                            <li class="name">
+                                <div class="Menu_name"><a href="list.html">推荐品牌</a><span>&lt;</span></div>
+                                <div class="link_name">
+                                    <a href="#">欧莱雅</a><a href="#"> 菲诗小铺</a><a href="#"> 雅诗兰黛</a>
+                                </div>
+                                <div class="menv_Detail">
+                                    <div class="cat_pannel clearfix">
+                                        <div class="hd_sort_list">
+                                            <dl class="clearfix" data-tpc="1">
+                                                <dt><a href="#">面膜<i>></i></a></dt>
+                                                <dd><a href="#">撕拉面膜</a><a href="#">面膜贴</a><a href="#">免洗面膜</a><a
+                                                        href="#">水洗面膜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="2">
+                                                <dt><a href="#">洁面<i>></i></a></dt>
+                                                <dd><a href="#">洁面摩丝</a><a href="#">洁面乳 </a><a href="#">洁面啫哩/胶</a><a
+                                                        href="#">面部去角质/磨砂</a><a href="#">洁面膏/霜</a><a href="#">洁肤皂</a>
+                                                </dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="3">
+                                                <dt><a href="#">化妆水<i>></i></a></dt>
+                                                <dd><a href="#"> 喷雾</a><a href="#"> 精华水</a><a href="#"> 柔肤水</a><a
+                                                        href="#">爽肤水</a><a href="#">收敛水/紧肤水</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">眼部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">防晒<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">唇部护理<i>></i></a></dt>
+                                                <dd><a href="#"> 眼膜</a><a href="#"> 眼部凝胶</a><a href="#">眼部精华</a><a
+                                                        href="#">眼霜</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                            <dl class="clearfix" data-tpc="4">
+                                                <dt><a href="#">乳液/面霜<i>></i></a></dt>
+                                                <dd><a href="#"> 乳液</a><a href="#"> 面霜</a><a href="#">按摩霜</a><a
+                                                        href="#">面部啫喱</a><a href="#">凝露/凝胶</a></dd>
+                                            </dl>
+                                            <div class="seprate clearfix"></div>
+                                        </div>
+                                        <div class="Brands_side">
+                                            <div class="Brands">
+                                                <a href="#" class="logo_Brands"><img src="images/Brands01.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands02.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands03.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands04.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands05.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands06.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands07.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands08.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands09.jpg" /></a>
+                                                <a href="#" class="logo_Brands"><img src="images/Brands10.jpg" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--品牌-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--菜单栏-->
+                <div class="Navigation" id="Navigation">
+                    <ul class="Navigation_name">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="#">日常护理</a></li>
+                        <li><a href="#">女士专区</a></li>
+                        <li><a href="#">男士专区</a></li>
+                        <li><a href="Buy_Brands.html">限时团购</a></li>
+                        <li><a href="#">礼品DIY</a><em class="hot_icon"></em></li>
+                        <li><a href="#">区域合作</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="link_bg"><img src="images/link_bg_03.png" /></a>
+            </div>
+        </div>
+    </div>
+    <!--幻灯片样式-->
+    <!-- banner -->
+    <link rel="stylesheet" href="./css/swiper.css">
+    <div class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#"><img style="width:100%;height: 540px;" src="./images/AD-01.jpg" /></a>
+
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"><img style="width:100%;height: 540px;" src="./images/AD-02.jpg" /></a>
+
+                </div>
+                <div class="swiper-slide">
+                    <a href="#"><img style="width:100%;height: 540px;" src="./images/AD-03.jpg" /></a>
+
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <script>
+            var swiper = new Swiper('.banner .swiper-container', {
+                autoplay: true,
+                pagination: {
+                    el: '.banner .swiper-pagination',
+                },
+            });
+        </script>
+    </div>
+    <div class="index_style clearfix">
+        <!--广告-->
+        <style>
+            .aui-sale-count{
+                width:100%;
+                
+            }
+            .aui-sale-count>div{
+                background-color: #661EE8;
+                width:33%;
+                float: left;
+                font-size: 24px;
+                color: #fff;
+                font-weight: bolder;
+            }
+        </style>
+        <div class="p_Deals">
+            <div class="Deals_title">
+                <div class="title_name">
+                    <h1>美妆特卖</h1>
+                    <h2>-大牌火热热卖中-</h2>
+                    <div class="aui-sale-count">
+                        <div class="aui-sale-count-item">
+                            <span id="hour_show">00时</span>
+                        </div>
+                        <div class="aui-sale-count-item">
+                            <span id="minute_show">00分</span>
+                        </div>
+                        <div class="aui-sale-count-item">
+                            <span id="second_show">00秒</span>
+                        </div>
+                    </div>
+                </div><img src="images/AD-bg1_10.png" />
+            </div>
+            <div class="Deals_list">
+                <ul class="products">
+                    <li><a href="#" class="products_img"><img src="images/AD-p-1.jpg" /><img src="images/title_img_13.png"
+                                class="title" /></a></li>
+                    <li><a href="#" class="products_img"><img src="images/AD-p-2.jpg" /><img src="images/title_img_14.png"
+                                class="title" /></a></li>
+                    <li><a href="#" class="products_img" ><img src="images/AD-p-3.jpg" /><img src="images/title_img_15.png"
+                                class="title" /></a></li>
+                    <li><a href="#" class="products_img"><img src="images/AD-p-4.jpg" /><img src="images/title_img_16.png"
+                                class="title" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--限时特卖-->
+        <div class="Limit_p">
+            <div class="Limit_title"><img src="images/Limit_img_20.png" />
+                <div class="title_name">
+                    <h1>限时团购</h1>
+                    <h2>LIMIT BUY</h2>
+                    <h3>品牌限时优惠促销</h3>
+                </div>
+            </div>
+            <div class="Limit_list">
+                <ul class="p_t_list" id="p_List">
+
+
+                </ul>
+            </div>
+            <script src="./js/data.js"></script>
+            <script>
+                console.log(pData)
+                for (var i = 0; i < 8; i++) {
+                    let li = `
+                <li>
+                    <a href="javascript:; " onclick='btnToInfo(${i})'><span>${pData[i].tiitle}</span><img src="${pData[i].img}" width="180"
+                    height="170" />
+                            <div class="time"><em class="iconfont icon-time"></em>价格：${pData[i].price}</div>
+                    </a>
+                    </li>
+                    `
+                    document.getElementById("p_List").innerHTML += li
+                }
+
+
+                function btnToInfo(res) {
+                    sessionStorage.setItem("pId", res)
+                    location = "./product.html"
+                }
+            </script>
+
+        </div>
+    </div>
+    <!---->
+    <div class="slogen">
+        <div class="index_style">
+            <ul class="wrap">
+                <li>
+                    <a href="#"><img src="images/slogen_34.png" data-bd-imgshare-binded="1"></a>
+                    <b>安全保证</b>
+                    <span>多重保障机制 认证商城</span>
+                </li>
+                <li><a href="#"><img src="images/slogen_28.png" data-bd-imgshare-binded="2"></a>
+                    <b>正品保证</b>
+                    <span>正品行货 放心选购</span>
+                </li>
+                <li>
+                    <a href="#"><img src="images/slogen_30.png" data-bd-imgshare-binded="3"></a>
+                    <b>七天无理由退换</b>
+                    <span>七天无理由保障消费权益</span>
+                </li>
+                <li>
+                    <a href="#"><img src="images/slogen_31.png" data-bd-imgshare-binded="4"></a>
+                    <b>天天低价</b>
+                    <span>价格更低，质量更可靠</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--底部图层-->
+    <div class="phone_style">
+        <div class="index_style">
+            <span class="phone_number"><em class="iconfont icon-dianhua"></em>400-4565-345</span><span
+                class="phone_title">客服热线 7X24小时 贴心服务</span>
+        </div>
+    </div>
+    <div class="footerbox clearfix">
+        <div class="clearfix">
+            <div class="">
+                <dl>
+                    <dt>新手上路</dt>
+                    <dd><a href="#">售后流程</a></dd>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">订购方式</a> </dd>
+                    <dd><a href="#">隐私声明 </a></dd>
+                    <dd><a href="#">推荐分享说明 </a></dd>
+                </dl>
+                <dl>
+                    <dt>配送与支付</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+                <dl>
+                    <dt>售后保障</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="text_link">
+            <p>
+                <a href="#">关于我们</a>｜ <a href="#">公开信息披露</a>｜ <a href="#">加入我们</a>｜ <a href="#">联系我们</a>｜ <a
+                    href="#">版权声明</a>｜ <a href="#">隐私声明</a>｜ <a href="#">网站地图</a></p>
+            <p>蜀ICP备11017033号 Copyright ©2020 宏颜知己有限公司 All Rights Reserved. Technical support:CDDGG Group</p>
+            <p>作者信息: 201858304315 黄悦轩 QQ:924615933 座右铭：明天会更好  || 201858304317 蒲文杰 QQ：1034307789 座右铭：后天会更好</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    //浮动导航
+    function float_nav(dom) {
+        var right_nav = $(dom);
+        var nav_height = right_nav.height();
+
+        function right_nav_position(bool) {
+            var window_height = $(window).height();
+            var nav_top = (window_height - nav_height) / 2;
+            if (bool) {
+                right_nav.stop(true, false).animate({
+                    top: nav_top + $(window).scrollTop()
+                }, 400);
+            } else {
+                right_nav.stop(true, false).animate({
+                    top: nav_top
+                }, 300);
+            }
+            right_nav.show();
+        }
+
+        if (!+'\v1' && !window.XMLHttpRequest) {
+            $(window).bind('scroll resize', function () {
+                if ($(window).scrollTop() > 300) {
+                    right_nav_position(true);
+                } else {
+                    right_nav.hide();
+                }
+            })
+        } else {
+            $(window).bind('scroll resize', function () {
+                if ($(window).scrollTop() > 300) {
+                    right_nav_position();
+                } else {
+                    right_nav.hide();
+                }
+            })
+        }
+    }
+    float_nav('#float');
+    float_nav('#left_nav');
+
+    // 倒计时
+    $(function () {
+        // 倒计时
+        var intDiff = parseInt(600000); //倒计时总秒数量
+
+        function timesr(intDiff) {
+            window.setInterval(function () {
+
+                var day = 0,
+
+                    hour = 0,
+
+                    minute = 0,
+
+                    second = 0; //时间默认值
+
+                if (intDiff > 0) {
+
+                    day = Math.floor(intDiff / (60 * 60 * 24));
+
+                    hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+
+                    minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+
+                    second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (
+                        minute * 60);
+
+                }
+
+                if (minute <= 9) minute = '0' + minute;
+
+                if (second <= 9) second = '0' + second;
+
+
+                $('#hour_show').html('<s id="h"></s>' + hour + '时');
+
+                $('#minute_show').html('<s></s>' + minute + '分');
+
+                $('#second_show').html('<s></s>' + second + '秒');
+
+                intDiff--;
+
+            }, 1000);
+
+        }
+        $(function () {
+
+            timesr(intDiff);
+
+        });
+    })
+</script>

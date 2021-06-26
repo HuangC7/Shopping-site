@@ -1,0 +1,451 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <title>产品详细页201858304315黄悦轩201858304317蒲文杰</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+
+            position: relative;
+        }
+        .big{
+            margin-left: 50px;
+            width: 450px;
+            height: 380px;
+            left: 360px;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            display: none;
+            z-index: 1000;
+        }
+        .mask{
+            width: 175px;
+            height: 175px;
+            background: rgba(123,155,214,0.1);
+            background-image:
+                    linear-gradient(rgba(125, 158, 218, 0.4) 0.3px, transparent 0),
+                    linear-gradient(90deg, rgba(125, 158, 218, 0.4) 0.3px, transparent 0);
+            background-size:
+                    1px 1px,
+                    1px 1px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+
+        }
+        .small{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+       <!--顶部图层-->
+       <div id="header_top">
+        <div id="top">
+            <div class="Inside_pages">
+                <div class="Collection">下午好，欢迎光临锦宏颜！<em></em><a href="#">收藏我们</a></div>
+                <div class="hd_top_manu clearfix">
+                    <ul class="clearfix">
+                        <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<span id="btn_click">
+                                <a href="javascript:;" class="red" id="Login">[请登录]</a> 新用户<a href="./Register.html"
+                                    class="red">[免费注册]</a>
+                            </span></li>
+
+                        <script>
+                            // 判断是否登录
+                            let user = window.sessionStorage.getItem("user")
+                            console.log(user);
+                            if (user != null) {
+                                document.getElementById("Login").innerText = user
+                            }
+
+
+                            document.getElementById("Login").onclick = function () {
+                                // 登录
+                                document.getElementById("diaLog").style.display = "block"
+                            }
+                        </script>
+
+
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"> <a href="./gouwuche.html">购物车</a> </li>
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">联系我们</a></li>
+                        <li class="hd_menu_tit list_name" data-addclass="hd_menu_hover"><a href="#"
+                                class="hd_menu">客户服务</a>
+                            <div class="hd_menu_list">
+                                <ul>
+                                    <li><a href="#">常见问题</a></li>
+                                    <li><a href="#">在线退换货</a></li>
+                                    <li><a href="#">在线投诉</a></li>
+                                    <li><a href="#">配送范围</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="hd_menu_tit phone_c" data-addclass="hd_menu_hover"><a href="#" class="hd_menu "><em
+                                    class="iconfont icon-shouji"></em>手机版</a>
+                            <div class="hd_menu_list erweima">
+                                <ul>
+                                    <img src="images/erweima.png" width="100px" height="100" />
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--样式-->
+
+ 
+    </div>
+    <!--产品详细页介绍-->
+    <div class="Inside_pages">
+        <!--位置-->
+        <div class="Location_link">
+            <em></em><a href="#">进口食品、进口牛</a> &lt; <a href="#">进口饼干/糕点</a> &lt; <a href="#">产品名称</a>
+        </div>
+        <!--产品详细介绍-->
+        <div class="Details_style clearfix" id="goodsInfo">
+            <div class="mod_picfold clearfix">
+                <div class="clearfix" id="detail_main_img">
+                    <div class="layout_wrap preview">
+                        <div id="vertical" class="bigImg">
+                            <div class="box" id="box">
+                                <div class="small">
+                                    <img src="mid/01.jpg" id="bImg" width="370" height="380" alt="" id="midimg" />
+                                    <div class="mask"></div>
+                                    <div style="display:none;" id="winSelector"></div>
+                                </div>
+                                <div class="big">
+                                    <img src="mid/01big.jpg" id = "bImg_big" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="smallImg">
+                            <div class="scrollbutton smallImgUp disabled">&lt;</div>
+                            <div id="imageMenu">
+                                <ul>
+                                    <li><img id="sImg" src="small/01.jpg" width="68" height="68" alt="洋妞" /></li>
+                                </ul>
+                            </div>
+                            <div class="scrollbutton smallImgDown">&gt;</div>
+                        </div>
+                        <!--smallImg end-->
+                        <div id="bigView" style="display:none;">
+                            <div><img width="800" height="800" alt="" src="" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--信息样式-->
+            <div class="textInfo" style="z-index: 2">
+                <form action="javascript:addToCart(97)" name="ECS_FORMBUY" id="ECS_FORMBUY">
+                    <div class="title">
+                        <h1 id="h1">Mixx 炼乳奶酪饼干 600g 马来西亚进口</h1>
+                        <p></p>
+                    </div>
+                    <div class="mod_detailInfo_priceSales">
+                        <div class="margins">
+                            <div class="Price clearfix"><label>价格</label><span class="price">¥10.9</span> &nbsp; &nbsp;
+                                &nbsp; <b class="price">34.00</b></div>
+                            <div class="Activity clearfix"><label>活动</label><span>指定商品满¥50，可换购以下任一商品</span></div>
+                        </div>
+                        <div class="s_Review">
+                            <a href="#">好评率<b>95%</b>[评论<b>87653</b>条]</a>
+                        </div>
+                    </div>
+                    <div class="buyinfo" id="detail_buyinfo">
+                        <dl>
+                            <dt>数量</dt>
+                            <dd>
+                                <div class="choose-amount left">
+                                    <a class="btn-reduce" href="javascript:;" id="pre">-</a>
+                                    <a class="btn-add" href="javascript:;" id="add">+</a>
+                                    <input class="text" id="buy-num" value="1">
+                                </div>
+                                <div class="P_Quantity">剩余：50000件</div>
+                            </dd>
+                            <dd>
+                                <div class="wrap_btn"> <a href="javascript:;" class="wrap_btn1" title="加入购物车"></a>
+                                    <a href="javascript:;" class="wrap_btn2" title="立即购买"></a> </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="Guarantee clearfix">
+                        <dl>
+                            <dt>支付方式</dt>
+                            <dd><em></em>货到付款（部分地区）</dd>
+                            <dd><em></em>在线支付</dd>
+                            <dd>
+                                <div class="payment" id="payment">
+                                    <a href="javascript:void(0);" class="paybtn">支付方式<span
+                                            class=" iconfont icon-unfold"></span></a>
+                                    <ul>
+                                        <li>货到付款</li>
+                                        <li>礼品卡支付</li>
+                                        <li>网上支付</li>
+                                        <li>银行转账</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </form>
+            </div>
+
+            <script src="./js/data.js"></script>
+            <script src="./js/jquery-3.3.1.js"></script>
+            <script>
+                let id = sessionStorage.getItem("pId")
+                console.log(id);
+                if (id == null) {
+                    alert("未获取改商品ID，将返回首页")
+                    location = "./index.html"
+                }
+                let pId = parseInt(id)
+                console.log(pData[pId]);
+
+                document.getElementById("bImg").src = pData[pId].img
+                document.getElementById("bImg_big").src = pData[pId].bimg
+                document.getElementById("sImg").src = pData[pId].img
+                document.getElementById("h1").innerHTML = pData[pId].tiitle
+                document.querySelectorAll(".price")[0].innerText = pData[pId].price
+                document.querySelectorAll(".price")[1].innerText = pData[pId].price + 100
+
+
+                let count = 1;
+
+                // 购买
+                $("#pre").click(function () {
+                    if (count <= 1) {
+                        count = 1;
+                        alert("不能再减了。。。。")
+                    } else {
+                        count -= 1;
+                    }
+                    $("#buy-num").val(count)
+                })
+
+                $("#add").click(function () {
+                    count += 1;
+                    $("#buy-num").val(count)
+                })
+
+
+                let ary = []
+                // 加入购物车
+                $(".wrap_btn1").click(function () {
+                    // 判断是否登录
+                    let user = window.sessionStorage.getItem("user")
+                    console.log(user);
+                    if (user == null) {
+                        alert("你没有登录，将前往登录")
+                        location = "./Login.html"
+                        return
+                    }
+
+
+                    let is = sessionStorage.getItem("cart")
+                    if (is == null) {
+                        ary.push(pData[pId])
+                        sessionStorage.setItem("cart", JSON.stringify(ary))
+                    } else {
+                        let isAry = JSON.parse(is)
+                        console.log(isAry);
+                        console.log('------------------------------------------------------------------');
+
+                        let result = true
+                        for (var i = 0; i < isAry.length; i++) {
+                            if (isAry[i].tiitle == document.getElementById("h1").innerHTML) {
+                                isAry[i].mcount += parseInt($("#buy-num").val());
+                                result = false
+                            }
+                        }
+                        if (result) {
+                            let isSession = JSON.parse(sessionStorage.getItem("cart"))
+                            let isii = pData[pId]
+                            let myArys = []
+                            for (let w = 0; w < isSession.length; w++) {
+                                myArys.push(isSession[w])
+                            }
+                            myArys.push(isii)
+                            sessionStorage.setItem("cart", JSON.stringify(myArys))
+                        } else {
+                            let iss = sessionStorage.getItem("cart")
+                            sessionStorage.setItem("cart", JSON.stringify(isAry))
+                        }
+                    }
+
+                    alert("加入购物车成功")
+                })
+
+                // 立即购买
+                $(".wrap_btn2").click(function () {
+
+                     // 判断是否登录
+                     let user = window.sessionStorage.getItem("user")
+                    console.log(user);
+                    if (user == null) {
+                        alert("你没有登录，将前往登录")
+                        location = "./Login.html"
+                        return
+                    }
+
+                    let is = sessionStorage.getItem("cart")
+                    if (is == null) {
+                        ary.push(pData[pId])
+                        sessionStorage.setItem("cart", JSON.stringify(ary))
+                    } else {
+                        let isAry = JSON.parse(is)
+                        console.log(isAry);
+                        console.log('------------------------------------------------------------------');
+
+                        let result = true
+                        for (var i = 0; i < isAry.length; i++) {
+                            if (isAry[i].tiitle == document.getElementById("h1").innerHTML) {
+                                isAry[i].mcount += parseInt($("#buy-num").val());
+                                result = false
+                            }
+                        }
+                        if (result) {
+                            let isSession = JSON.parse(sessionStorage.getItem("cart"))
+                            let isii = pData[pId]
+                            let myArys = []
+                            for (let w = 0; w < isSession.length; w++) {
+                                myArys.push(isSession[w])
+                            }
+                            myArys.push(isii)
+                            sessionStorage.setItem("cart", JSON.stringify(myArys))
+                        } else {
+                            sessionStorage.setItem("cart", JSON.stringify(isAry))
+                        }
+                    }
+
+                    window.location = "./gouwuche.html"
+                })
+            </script>
+            <!--放大镜Js--------------------------------------------------------->
+            <script type="text/javascript">
+            		//获取最大盒子
+                    var box = document.getElementsByClassName("box")[0];
+                    //获取小盒子
+                    var small = box.children[0];
+                    //获取mask
+                    var mask = small.children[1];
+                    //获取大盒子
+                    var big = box.children[1];
+
+                    //设置小盒子的移入事件  移入显示，移出隐藏
+                    small.onmouseover = function(){
+                        mask.style.display = "block";
+                        big.style.display = "block";
+                    }
+                    small.onmouseout = function(){
+                        mask.style.display = "none";
+                        big.style.display = "none";
+                    }
+
+                    //要得到鼠标在 small 内的坐标
+                    small.onmousemove = function(event){
+                        event = event || window.event;
+                        var pagex = event.pageX || scroll().left + event.clientX;
+                        var pagey = event.pageY || scroll().top + event.clientY;
+                        //x,y表示mask的位置
+                        var x = pagex - box.offsetLeft - mask.offsetWidth/2 - 110;
+                        var y = pagey - box.offsetTop - mask.offsetHeight/2 - 30;
+                        //限制盒子的移动范围
+                        if (x<0){
+                            x = 0;
+                        }else if(x > small.offsetWidth - mask.offsetWidth){
+                            x = small.offsetWidth - mask.offsetWidth;
+                        }
+
+                        if (y<0){
+                            y = 0;
+                        }else if(y > small.offsetHeight - mask.offsetHeight){
+                            y = small.offsetHeight - mask.offsetHeight;
+                        }
+
+                        //移动黄盒子
+                        mask.style.left = x + "px";
+                        mask.style.top = y + "px";
+
+                        //等比例移动右边的盒子
+                        //获取大图片
+                        var bigImg = big.children[0];
+                        //大盒子走的距离/mask走的距离 = (大图片 - 大盒子)/(小图片 - 黄盒子)
+                        //比例公式  大图片宽度 - 大盒子宽度/ 小盒子宽度 - mask宽度
+//        var eqs = big.offsetWidth - bigImg.offsetWidth / small.offsetWidth - mask.offsetWidth;
+                        var eqs = (bigImg.offsetWidth - big.offsetWidth) / (small.offsetWidth - mask.offsetWidth);
+                        //大图片移动
+                        bigImg.style.marginLeft = -x*eqs + "px";
+                        bigImg.style.marginTop = -y*eqs + "px";
+
+                    }
+
+                    function scroll(){
+                        return {
+                            "top": window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
+                            "left":  window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
+                        }
+                    }
+            </script>
+            <!--end------------------------------------------------------------------>
+            <!--产品推荐-->
+            <div class="Recommend">
+                <div class="title_name">同类产品推荐</div>
+                <div class="Recommend_list">
+                    <ul>
+                        <li class="clearfix">
+                            <div class="pic_img"><a href=""><img src="./images/01.jpg" data-bd-imgshare-binded="1"></a>
+                            </div>
+                            <div class="r_content">
+                                <div class="title"><a href="#">泊泉雅化妆品彩品全套老国货品牌抖音初学者美妆工具女学生送礼礼盒</a></div>
+                                <div class="p_Price">￥32.50</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="pic_img"><a href=""><img src="./images/02.jpg" data-bd-imgshare-binded="1"></a>
+                            </div>
+                            <div class="r_content">
+                                <div class="title"><a href="#">泊泉雅化妆品彩品全套老国货品牌抖音初学者美妆工具女学生送礼礼盒</a></div>
+                                <div class="p_Price">￥32.50</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="pic_img"><a href=""><img src="./images/03.jpg" data-bd-imgshare-binded="1"></a>
+                            </div>
+                            <div class="r_content">
+                                <div class="title"><a href="#">泊泉雅化妆品彩品全套老国货品牌抖音初学者美妆工具女学生送礼礼盒</a></div>
+                                <div class="p_Price">￥32.50</div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="pic_img"><a href=""><img src="./images/04.jpg" data-bd-imgshare-binded="1"></a>
+                            </div>
+                            <div class="r_content">
+                                <div class="title"><a href="#">泊泉雅化妆品彩品全套老国货品牌抖音初学者美妆工具女学生送礼礼盒</a></div>
+                                <div class="p_Price">￥32.50</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

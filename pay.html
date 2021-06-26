@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <link rel="stylesheet" type="text/css" href="css/pay.css">
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/jquery.jqzoom.js"></script>
+    <script src="./js/admin.js"></script>
+    <script src="./js/swiper.js"></script>
+  <title>支付页面201858304315黄悦轩201858304317蒲文杰</title>
+</head>
+    <body>
+        <!--顶部图层-->
+        <div id="header_top">
+        <div id="top">
+            <div class="Inside_pages">
+                <div class="Collection">下午好，欢迎光临锦宏颜！<em></em><a href="#">收藏我们</a></div>
+                <div class="hd_top_manu clearfix">
+                    <ul class="clearfix">
+                        <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<span id="btn_click">
+                                    <a href="javascript:;" class="red" id="Login">[请登录]</a> 新用户<a href="./Register.html"
+                                                                                                  class="red">[免费注册]</a>
+                                </span></li>
+
+                        <script>
+                            // 判断是否登录
+                            let user = window.sessionStorage.getItem("user")
+                            console.log(user);
+                            if (user != null) {
+                                document.getElementById("Login").innerText = user
+                            }
+
+
+                            document.getElementById("Login").onclick = function () {
+                                // 登录
+                                document.getElementById("diaLog").style.display = "block"
+                            }
+                        </script>
+
+
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"> <a href="./gouwuche.html">购物车</a> </li>
+                        <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">联系我们</a></li>
+                        <li class="hd_menu_tit list_name" data-addclass="hd_menu_hover"><a href="#"
+                                                                                           class="hd_menu">客户服务</a>
+                            <div class="hd_menu_list">
+                                <ul>
+                                    <li><a href="#">常见问题</a></li>
+                                    <li><a href="#">在线退换货</a></li>
+                                    <li><a href="#">在线投诉</a></li>
+                                    <li><a href="#">配送范围</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="hd_menu_tit phone_c" data-addclass="hd_menu_hover"><a href="#" class="hd_menu "><em
+                                class="iconfont icon-shouji"></em>手机版</a>
+                            <div class="hd_menu_list erweima">
+                                <ul>
+                                    <img src="images/erweima.png" width="100px" height="100" />
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--样式-->
+</div>
+        <div class="panel panel-default">
+        <!-- 收银台LOGO -->
+        <div class="panel-body pay_cashier">
+            <div class="col-xs-12" style="font-size: 28px; margin-left: 100px; padding-bottom: 5px">
+               收银台
+            </div>
+        </div>
+            <!-- /END CASHIER LOGO -->
+            <!-- 支付金额 -->
+        <div class="panel-body pay_title" style="padding-top: 25px;font-size: 14px;">
+            <span class="col-xs-1 control-label text-left" style="float: left;">支付金额：</span>
+            <div class="col-xs-3" style="color:#ff2832;font-size:18px;float: left;margin-left: 15px">¥
+                200
+            </div>
+            <span class="col-xs-1 control-label" style="float: left;margin-left: 350px">申请单号：</span>
+            <div class="col-xs-3 text-left">
+                SQ201810100001
+            </div>
+        </div>
+            <!--/ END 支付金额 -->
+
+            <!-- PAY WAY -->
+        <div class="panel-body pay_box">
+            <table class="payment_table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="javascript:;" onclick="choosePayType(this,'ALIPAY')" class="selPayType1 current">
+                                <img src="images/pay2.png" title="支付宝" width="140" height="40">
+                                <span></span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="javascript:;" onclick="choosePayType(this,'WECHAT')" class="selPayType1">
+                                <img src="images/pay1.png" title="微信支付" width="140" height="40">
+                                <span></span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <a id="btnCommonSubmit" href="javascript:void(0);" class="btn btn_big">立即支付</a>
+            </div>
+        </div>
+
+            <!-- END PAY WAY -->
+
+            <!-- /end提交后台发起支付-->
+
+            <!-- 推荐支付宝支付开始 -->
+        <div class="panel-body pay_recommend">
+            <p style="padding-left:15px;margin-top: 30px;margin-left: 20px;font-size: 14px">推荐支付宝扫码支付:</p>
+            <div class="scan_code">
+                <iframe name="alipayScanIframe" src="images/pay3.png" width="103" height="103" frameborder="0"
+                        scrolling="no" style="height: 103px;width:103px; border:1px solid #aaa;"></iframe>
+                <img style="position:relative;top:-58px;" class="scan" src="images/pay4.png" alt=""
+                     width="27" height="27">
+                <div class="scan_text" style="position:relative;top:-58px;">
+                    <span>打开手机支付宝</span><span>扫一扫继续付款</span>
+                    <span class="operation" style="background: url(images/right.png) right center no-repeat;">操作演示</span>
+                </div>
+                <div class="hide1" style="display:none;">
+                    <img class="step1" src="images/step1.gif" alt="">
+                    <img class="step3" src="images/middle.pn" alt="">
+                    <img class="step2" src="images/step2.gif" alt="">
+                </div>
+            </div>
+        </div>
+            <!-- 推荐支付宝支付结束 -->
+        </div>
+        <div class="return">
+            <a href="gouwuche.html">返回购物车</a>
+        </div>
+        <!--底部-->
+    <div class="slogen" style="margin-top: 50px">
+        <div class="index_style">
+            <ul class="wrap">
+                <li>
+                    <a href="#"><img src="images/slogen_34.png" data-bd-imgshare-binded="1"></a>
+                    <b>安全保证</b>
+                    <span>多重保障机制 认证商城</span>
+                </li>
+                <li><a href="#"><img src="images/slogen_28.png" data-bd-imgshare-binded="2"></a>
+                    <b>正品保证</b>
+                    <span>正品行货 放心选购</span>
+                </li>
+                <li>
+                    <a href="#"><img src="images/slogen_30.png" data-bd-imgshare-binded="3"></a>
+                    <b>七天无理由退换</b>
+                    <span>七天无理由保障消费权益</span>
+                </li>
+                <li>
+                    <a href="#"><img src="images/slogen_31.png" data-bd-imgshare-binded="4"></a>
+                    <b>天天低价</b>
+                    <span>价格更低，质量更可靠</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!--底部图层-->
+    <div class="phone_style">
+        <div class="index_style">
+            <span class="phone_number"><em class="iconfont icon-dianhua"></em>400-4565-345</span><span
+                class="phone_title">客服热线 7X24小时 贴心服务</span>
+        </div>
+    </div>
+    <div class="footerbox clearfix">
+        <div class="clearfix">
+            <div class="">
+                <dl>
+                    <dt>新手上路</dt>
+                    <dd><a href="#">售后流程</a></dd>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">订购方式</a> </dd>
+                    <dd><a href="#">隐私声明 </a></dd>
+                    <dd><a href="#">推荐分享说明 </a></dd>
+                </dl>
+                <dl>
+                    <dt>配送与支付</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+                <dl>
+                    <dt>售后保障</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd><a href="#">保险需求测试</a></dd>
+                    <dd><a href="#">专题及活动</a></dd>
+                    <dd><a href="#">挑选保险产品</a> </dd>
+                    <dd><a href="#">常见问题 </a></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="text_link">
+            <p>
+                <a href="#">关于我们</a>｜ <a href="#">公开信息披露</a>｜ <a href="#">加入我们</a>｜ <a href="#">联系我们</a>｜ <a
+                    href="#">版权声明</a>｜ <a href="#">隐私声明</a>｜ <a href="#">网站地图</a></p>
+            <p>蜀ICP备11017033号 Copyright ©2020 宏颜知己有限公司 All Rights Reserved. Technical support:CDDGG Group</p>
+            <p>作者信息: 201858304315 黄悦轩 QQ:924615933 座右铭：明天会更好  || 201858304317 蒲文杰 QQ：1034307789 座右铭：后天会更好</p>
+        </div>
+    </div>
+</body>
+</html>
