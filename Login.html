@@ -1,0 +1,244 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <title>用户登陆201858304315黄悦轩201858304317蒲文杰</title>
+    <style>
+        .msg{
+            color: red;
+        }
+    </style>
+</head>
+
+<body onload="createCode()">
+    <div class="log_bg">
+        <div class="top">
+            <div class="logo">
+                <div class="logo_link"><a href="Index.html"><img src="images/logo.png"></a></div>
+                <div class="phone">免费咨询热线：<b>400-567-4556</b></div>
+            </div>
+        </div>
+        <div class="login">
+            <div class="log_img"><img src="images/imgbg_03.png" width="611" height="425"></div>
+            <div class="log_c">
+                <form>
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr height="50" valign="top">
+                                <td width="55">&nbsp;</td>
+                                <td>
+                                    <span class="fl" style="font-size:24px;">登录</span>
+                                    <span class="fr">还没有商城账号，<a href="./Register.html"
+                                            style="color:#ff4e00;">立即注册</a></span>
+                                </td>
+                            </tr>
+                            <tr height="70">
+                                <td>用户名</td>
+                                <td><input type="text" value="" class="l_user" id="userName"><span class="msg"></span></td>
+                            </tr>
+                            <tr height="70">
+                                <td>密&nbsp; &nbsp; 码</td>
+                                <td><input type="password" value="" class="l_pwd" id="pwd"><span class="msg"></span></td>
+                            </tr>
+                            <tr>
+                                <td>验证码：</td>
+                                <td>
+                                    <input type="text" id="code" value="" style="width:100px;" onblur="checkCode()" />&nbsp;&nbsp;&nbsp;
+						            <span id="codeSpan" style="background-image: url(img/背景.png);color: black;" onclick="createCode()"></span>
+                                    <span id="codeSpan2"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td style="font-size:12px; padding-top:20px;">
+                                    <span style="font-family:'宋体';" class="fl">
+                                        <label class="r_rad"><input type="checkbox"></label><label
+                                            class="r_txt">请保存我这次的登录信息</label>
+                                    </span>
+                                    <span class="fr"><a href="javascript:void(0)" style="color:#ff4e00;">忘记密码</a></span>
+                                </td>
+                            </tr>
+                            <tr height="60">
+                                <td>&nbsp;</td>
+                                <td><input type="button" value="登录" id="btn_Login" class="log_btn"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+                <script src="./js/jquery-3.3.1.js"></script>
+                <script src="./js/admin.js"></script>
+                <script>
+
+                    $(function () {
+                        // 初始化信息
+                        let userDatas = sessionStorage.getItem("login")
+                        console.log(userDatas);
+
+                        if (userDatas == null || userDatas == "") {
+                            sessionStorage.setItem('login', JSON.stringify(userData))
+                        } else {
+                            let Js = JSON.parse(userDatas);
+                            $.each(userData, function (index, value) {
+                                Js.push(value)
+                            })
+                            sessionStorage.setItem('login', JSON.stringify(Js))
+                        }
+                        // 结果
+                        let result = 0;
+                        // 用户名
+                        let userName = $("#userName")
+                        let pwd = $("#pwd") // 密码
+
+                        // 判断密码
+                        pwd.blur(function () {
+                            if (pwd.val() == "") {
+                                pwd.next().text('密码不能为空')
+                            } else if (pwd.val().length < 1 || pwd.val().length > 16) {
+                                pwd.next().text('密码的长度在1 到 16 位')
+                            } else {
+                                pwd.next().text('')
+                                result += 1;
+                            }
+                        })
+
+                        // 判断用户名
+                        userName.blur(function () {
+                            if (userName.val() == "") {
+                                userName.next().text('用户名不能为空')
+                            } else if (userName.val().length < 1 || userName.val().length > 16) {
+                                userName.next().text('用户名的长度在1 到 16 位')
+                            } else {
+                                userName.next().text('')
+                                result += 1;
+                            }
+                        })
+
+                        // 登录
+                        $("#btn_Login").click(function () {
+                            let flag = false
+                            // 判断密码
+                            if (pwd.val() == "") {
+                                pwd.next().text('密码不能为空')
+                                flag = false
+                            } else if (pwd.val().length < 1 || pwd.val().length > 16) {
+                                pwd.next().text('密码的长度在8 到 16 位')
+                                flag = false;
+                            } else {
+                                pwd.next().text('')
+                                flag = true;
+                            }
+
+                            // 判断用户名
+                            if (userName.val() == "") {
+                                userName.next().text('用户名不能为空')
+                                flag = false
+                            } else if (userName.val().length < 1 || userName.val().length > 16) {
+                                userName.next().text('用户名的长度在1 到 16 位')
+                                flag = false
+                            } else {
+                                userName.next().text('')
+                                flag = true;
+                            }
+
+                            if (flag) {
+                                let user = userInfo(userName.val())
+                                console.log(user);
+
+                                if (user == null) {
+                                    alert('该用户名不存在')
+                                    return
+                                }
+                                if (user.pwd != pwd.val()) {
+                                    alert('密码错误')
+                                    return
+                                }
+
+                                if(!checkCode()){
+                                    alert('验证码错误')
+                                    return
+                                }
+                                window.sessionStorage.setItem('user', userName.val())
+                                window.location = "./index.html"
+                            }
+                        })
+
+
+                        // 获取用户名
+                        function userInfo(name) {
+                            // 如果判断正确，进行登录
+                            var res = null;
+                            console.log(name);
+                            let myAdmin = sessionStorage.getItem("login")
+                            let userAdmin = JSON.parse(myAdmin)
+                            console.log(userAdmin);
+                            
+                            
+                            $.each(userAdmin, function (index, value) {
+                               
+                                if (value.userName == name.trim()) {
+                                    res = value
+                                }
+                            })
+                            return res
+                        }
+
+                    })
+
+                    //校验确认验证码------------------
+                    function checkCode(){
+                        //获取用户输入验证码
+                        var code=document.getElementById("code").value;
+                        //获取随机验证码
+                        var code2=document.getElementById("codeSpan").innerHTML;
+                        //获取span对象
+                        var span=document.getElementById("codeSpan2");
+                        //比较前两次密码是否相同
+                        if( code==""|| code==null){
+                            //输入校验结果
+                            span.innerHTML="*验证码不能为空";
+                            span.style.color="red";
+                            createCode();
+                            return false;
+                        }else if(code==code2){
+                            //输入校验结果
+                            span.innerHTML="*验证码通过";
+                            span.style.color="green";
+                            return true;
+                        }else{
+                            //输入校验结果
+                            span.innerHTML="*验证码错误"
+                            span.style.color="red";
+                            createCode();
+                            return false;
+                        }
+                    }
+
+                    //常见验证码
+                    function createCode(){
+                        //创建随机4位数字，math.floor向下取整
+                        var code=Math.floor(Math.random()*9000+1000);
+                        //获取元素对象
+                        var  span=document.getElementById("codeSpan");
+                        //将数字存放到span中
+                        span.innerHTML=code;
+                        //给span添加背景图片
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="btmbg">
+            <div class="btm">
+                备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com Copyright © 2015-2020 宏颜知己商城网 All Rights Reserved. 复制必究 ,
+                Technical Support: Dgg Group <br>
+                <p>作者信息: 201858304315 黄悦轩 QQ:924615933 座右铭：明天会更好  || 201858304317 蒲文杰 QQ：1034307789 座右铭：后天会更好</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
